@@ -12,4 +12,6 @@ result:
     {% if execution.result.stderr %}*Stdout:* {% endif %}
     ```{{ execution.result.stdout }}```
     {% if execution.result.stderr %}*Stderr:* ```{{ execution.result.stderr }}```{% endif %}
-color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
+extra:
+  slack:
+    color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
