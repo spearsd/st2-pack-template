@@ -9,14 +9,17 @@
             type: 'string'
             description: 'List of hosts to run playbook against'
             required: true
+            position: 0
         playbook:
             type: 'string'
             description: "Path to the playbook yaml file"
             required: true
+            position: 1
         extra_vars:
             type: 'string'
             description: 'Extra-variables to include in the playbook execution (comma delimited)'
             required: true
+            position: 2
         cmd:
             immutable: true
             default: '/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook -i {{hosts}} {{playbook}} --extra-vars={{extra_vars}}'
