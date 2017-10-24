@@ -5,7 +5,7 @@ description: "Executes an ansible-playbook"
 formats:
   - display: "ansible-playbook </path/to/hosts> </path/to/playbook> <extra-var, extra-var>"
     representation:
-      - "ansible-playbook -i {{ hosts }} {{ playbook }} --extra-vars={{ extra_vars }}"
+      - "ansible-playbook {{ hosts }} {{ playbook }} {{ extra_vars }}"
 result:
   format: |
     Ansible command `{{ execution.parameters.args }}` result: {~}
