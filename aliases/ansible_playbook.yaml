@@ -3,12 +3,12 @@ name: "chatops.ansible_playbook"
 action_ref: "st2_pack_aliases.ansible_playbook"
 description: "Executes an ansible-playbook"
 formats:
-  - display: "ansible-playbook </path/to/hosts> </path/to/playbook> <extra-var, extra-var>"
+  - display: "ansible_paybook </path/to/hosts> </path/to/playbook> <extra-var, extra-var>"
     representation:
-      - "ansible-playbook {{ hosts }} {{ playbook }} {{ extra_vars }}"
+      - "ansible_playbook {{ hosts }} {{ playbook }} {{ extra_vars }}"
 result:
   format: |
-    Ansible command `{{ execution.parameters.args }}` result: {~}
+    Ansible-playbook command `{{ execution.parameters.args }}` result: {~}
     {% if execution.result.stderr %}*Stdout:* {% endif %}
     ```{{ execution.result.stdout }}```
     {% if execution.result.stderr %}*Stderr:* ```{{ execution.result.stderr }}```{% endif %}
