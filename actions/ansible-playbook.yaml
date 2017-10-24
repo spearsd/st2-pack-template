@@ -1,0 +1,32 @@
+---
+    name: 'ansible-playbook'
+    runner_type: 'remote-shell-cmd'
+    description: 'Run ansible playbook against targeted host(s)'
+    enabled: true
+    entry_point: ''
+    parameters:
+        sudo:
+          description: "Run command with sudo"
+          type: boolean
+          immutable: true
+          default: true
+        kwarg_op:
+          immutable: true
+        hosts:
+            type: 'string'
+            description: 'List of hosts to run playbook against'
+            required: true
+            position: 0
+        playbook:
+            type: 'string'
+            description: "Path to the playbook yaml file"
+            required: true
+            position: 1
+        extra-vars:
+            type: 'string'
+            description: 'Extra-variables to include in the playbook execution (comma delimited)'
+            required: true
+            position: 2
+        cmd:
+            immutable: true
+            default: '/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook -i {{hosts}} {{playbook}} --extra-vars={{extra-vars}}'
