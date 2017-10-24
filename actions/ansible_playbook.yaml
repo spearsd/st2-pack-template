@@ -1,5 +1,5 @@
 ---
-    name: 'ansible-playbook'
+    name: 'ansible_playbook'
     runner_type: 'remote-shell-cmd'
     description: 'Run ansible playbook against targeted host(s)'
     enabled: true
