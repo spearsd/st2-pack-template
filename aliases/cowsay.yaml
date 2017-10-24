@@ -1,6 +1,6 @@
 ---
 name: chatops.cowsay
-action_ref: st2_chatops_aliases.cowsay
+action_ref: st2_pack_aliases.cowsay
 description: Draws a cow that says what you want
 formats:
   - display: "cowsay <message>"
